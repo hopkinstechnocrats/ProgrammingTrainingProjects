@@ -7,25 +7,34 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.TankDrive;
 
 /**
  * An example command that uses an example subsystem.
  */
-public class ExampleCommand extends CommandBase
-{
+public class JoystickDrive extends CommandBase {
     @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField", "FieldCanBeLocal"})
-    private final ExampleSubsystem subsystem;
+    TankDrive subsystem;
+    XboxController controller;
 
     /**
      * Creates a new ExampleCommand.
      *
      * @param subsystem The subsystem used by this command.
      */
-    public ExampleCommand(ExampleSubsystem subsystem)
-    {
-        this.subsystem = subsystem;
-        addRequirements(subsystem);
+    public JoystickDrive(TankDrive subsystem, XboxController controller) {
+
+    }
+
+    @Override
+    public void execute() {
+
+    }
+
+    @Override
+    public boolean isFinished() {
+        return false;
     }
 }
