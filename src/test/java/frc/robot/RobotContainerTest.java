@@ -21,7 +21,8 @@ public class RobotContainerTest {
         assert robotContainer.tankDrive != null;
         assert robotContainer.tankDrive.getDefaultCommand() instanceof JoystickDrive;
         assert robotContainer.controller != null;
-
+        assert robotContainer.intakeButton != null;
+        assert robotContainer.intake != null;
     }
 
     @Test
