@@ -10,6 +10,9 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.TankDrive;
+import edu.wpi.first.hal.HAL;
+
+import java.lang.Object;
 
 /**
  * An example command that uses an example subsystem.
@@ -25,12 +28,14 @@ public class JoystickDrive extends CommandBase {
      * @param subsystem The subsystem used by this command.
      */
     public JoystickDrive(TankDrive subsystem, XboxController controller) {
-
+        this.controller = controller;
+        this.subsystem = subsystem;
+        addRequirements(subsystem);
     }
 
     @Override
     public void execute() {
-
+        subsystem.sendDriveSignal(controller.getRawAxis(0), controller.getRawAxis(1));
     }
 
     @Override

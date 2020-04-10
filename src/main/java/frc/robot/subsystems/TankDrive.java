@@ -22,11 +22,13 @@ public class TankDrive extends SubsystemBase {
      * Creates a new ExampleSubsystem.
      */
     public TankDrive() {
-
+        left = new WPI_TalonSRX(0);
+        right = new WPI_TalonSRX(1);
+        drive = new DifferentialDrive(left, right);
     }
 
     public void sendDriveSignal(double left, double right) {
-
+        drive.tankDrive(left, right);
     }
 
     /**
