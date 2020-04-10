@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.JoystickDrive;
 import frc.robot.subsystems.TankDrive;
 
@@ -24,6 +25,7 @@ public class RobotContainer {
     // The robot's subsystems and commands are defined here...
     TankDrive tankDrive;
     XboxController controller;
+    JoystickButton intakeButton;
 
     /**
      * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -32,8 +34,13 @@ public class RobotContainer {
         tankDrive = new TankDrive();
         controller = new XboxController(0);
         CommandScheduler.getInstance().setDefaultCommand(tankDrive, new JoystickDrive(tankDrive, controller));
+        //instantiate the JoystickButton here
     }
 
+    public void configureButtonBindings() {
+        //configure the trigger here
+
+    }
 
     /**
      * Use this to pass the autonomous command to the main {@link Robot} class.
