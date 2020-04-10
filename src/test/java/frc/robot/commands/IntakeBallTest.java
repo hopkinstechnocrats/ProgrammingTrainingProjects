@@ -22,6 +22,7 @@ public class IntakeBallTest {
     public void testExecute() {
         Intake mockSubsystem = mock(Intake.class);
         IntakeBall testCommand = new IntakeBall(mockSubsystem, INTAKE_SPEED);
+        testCommand.execute();
         verify(mockSubsystem).spinIntake(INTAKE_SPEED);
     }
 }
